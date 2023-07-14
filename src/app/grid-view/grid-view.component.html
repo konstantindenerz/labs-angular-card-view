@@ -1,0 +1,16 @@
+<div class="header">
+  Header
+</div>
+<ng-content></ng-content>
+<div class="items">
+  <ng-container *ngFor="let item of items">
+    <ng-container *ngIf="itemTemplate">
+      <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item}"></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="!itemTemplate">
+<!--      <default-item-card [item]=item></...> -->
+
+    </ng-container>
+  </ng-container>
+</div>
